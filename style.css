@@ -8,7 +8,8 @@ body {
     margin: 0px;
 }
 
-.sidebar, .header{
+.sidebar,
+.header {
     padding-top: 8px;
 }
 
@@ -16,20 +17,23 @@ body {
     min-height: 100vh;
     max-width: 100vw;
     display: grid;
-    grid-template: 1fr 4fr / 1fr 5fr
+    grid-template: 0.6fr 4fr / 1fr 5fr;
 }
 
 /*HEADER*/
 
 
 .header {
+    max-height: 180px;
     grid-area: 1 / 2 / 2 / 3;
+    padding: 0px 16px;
     display: grid;
     grid-template-rows: 1fr 2fr;
 }
 
 .header>.top {
     display: grid;
+    gap: 8px;
     grid-template-columns: 1fr 6fr 3fr;
 }
 
@@ -41,7 +45,6 @@ body {
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
-    float: left;
     width: min(35rem, 40vw);
     padding: 8px;
     border-radius: 4px;
@@ -57,13 +60,11 @@ body {
 
 .header>.top>.user_config>.name {
     font-weight: bold;
-    padding-right: 8px;
 }
 
 .header>.top>.user_config>* {
     margin: auto;
 }
-
 
 
 .header>.bottom {
@@ -72,10 +73,27 @@ body {
 }
 
 .header>.bottom>.user {
-    display: flex;
-    justify-content: left;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr 6fr;
     align-items: center;
 }
+
+.header>.bottom>.user>img {
+    margin: auto;
+    padding-left: 8px;
+}
+
+.header>.bottom>.user>div>.user_text_greeting {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.header>.bottom>.user>div>.user_text_name {
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
 
 .header>.bottom>.buttons {
     display: grid;
@@ -86,7 +104,7 @@ body {
 }
 
 .header>.bottom>.buttons>button {
-    padding: min(1rem + 0.5vw, 2vw);
+    padding: 12px min(1rem + 0.5vw, 2vw);
     background-color: var(--celestial-blue);
     border: 0px;
     border-radius: 1rem;
@@ -121,15 +139,10 @@ body {
     grid-area: 1 / 1 / 3 / 2;
 }
 
-.content>.projects>.title {
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-}
-
 .content>.projects>.allProjects {
     display: grid;
     padding: 1rem;
+    padding-top: 0px;
     gap: 1rem;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -143,4 +156,99 @@ body {
 
 .title {
     padding: 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+/*Announcements*/
+
+.content>.announcements {
+    padding: 16px;
+}
+
+
+.content>.announcements>.announcements_text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 16px 0px;
+}
+
+.content>.announcements>.all_announcements {
+    border-radius: 8px;
+    background-color: var(--white);
+    display: grid;
+    grid-template: repeat(3, 1fr)/ 1fr;
+    padding: 16px;
+    row-gap: 8px;
+}
+
+.content>.announcements>.all_announcements {
+    border-radius: 8px;
+    background-color: var(--white);
+    display: grid;
+    grid-template: repeat(3, 1fr)/ 1fr;
+    padding: 16px;
+    row-gap: 8px;
+}
+
+.content>.announcements>.all_announcements:last-child{
+    padding-bottom: 0px;
+}
+
+.content>.announcements>.all_announcements>.one_announcement>.announ_title {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.content>.announcements>.all_announcements>.one_announcement>.announ_text {
+    font-size: 0.8rem
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*Trending*/
+
+.trending{
+    padding-left: 8px;
+    padding-right: 16px;
+    
+}
+
+.trending_user_information{
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.trending_text{
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 16px 0px;
+}
+
+.trending_div{
+    border-radius: 8px;
+    background-color: var(--white);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 16px;
+}
+
+.trending_users{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 12px;
+    padding: 8px 0px;
+}
+
+.trending_username{
+    font-weight: bold;
 }
